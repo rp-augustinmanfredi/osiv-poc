@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.model.UserEntity;
 import com.example.demo.repository.UsersRepository;
+import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,9 +14,11 @@ import java.util.Optional;
 public class UsersServiceImpl implements UsersService {
 
     private final UsersRepository userRepository;
+    private final EntityManager entityManager;
 
-    public UsersServiceImpl(UsersRepository userRepository) {
+    public UsersServiceImpl(UsersRepository userRepository, EntityManager entityManager) {
         this.userRepository = userRepository;
+        this.entityManager = entityManager;
     }
 
     @Override

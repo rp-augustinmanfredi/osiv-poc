@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.model.OrderDto;
 import com.example.demo.model.UserDto;
 import com.example.demo.model.UserEntity;
+import jakarta.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,10 @@ public class AggregatorServiceImpl implements AggregatorService {
 
   private final UsersService usersService;
   private static final int DB_ACCESS_TIMES = 10;
+  private final EntityManager entityManager;
 
-  public AggregatorServiceImpl(UsersService usersService) {
+  public AggregatorServiceImpl(UsersService usersService, EntityManager entityManager) {
+    this.entityManager = entityManager;
     this.usersService = usersService;
   }
 

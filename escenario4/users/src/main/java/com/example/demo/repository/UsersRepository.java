@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UsersRepository extends JpaRepository<UserEntity, Long> {
 
+
   @EntityGraph(attributePaths = "orders")
   Optional<UserEntity> findDetailedById(Long userId);
 
