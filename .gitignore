@@ -18,4 +18,8 @@ buildNumber.properties
 .DS_Store
 .idea/*
 *.idea/*
-pruebas/*
+*/pruebas/reports*
+*/pruebas/results*
+*/pruebas/jmeter.log
+jmeter.log
+
